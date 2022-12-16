@@ -229,12 +229,12 @@ class Pp extends Console\Dispatcher\Kit
                 $i,
                 $token['namespace'],
                 $token['token'],
-                30 < $token['length']
+				30 < $token['length']
                     ? mb_substr($token['value'], 0, 29) . '…'
-                    : 'EOF' === $token['token']
+                    : ('EOF' === $token['token']
                         ? str_repeat(' ', 30)
                         : $token['value'] .
-                          str_repeat(' ', 30 - $token['length']),
+                          str_repeat(' ', 30 - $token['length'])),
                 $token['offset']
             );
         }
