@@ -169,7 +169,7 @@ class Parser
         $this->_trace      = [];
         $this->_todo       = [];
 
-        if (false === array_key_exists($rule, $this->_rules)) {
+        if (null === $rule || false === array_key_exists($rule, $this->_rules)) {
             $rule = $this->getRootRule();
         }
 
